@@ -14,7 +14,7 @@ const choiceList = reactive([
     name: 'マクドナルド'
   }
 ])
-function addItem(name: string) {
+const addItem = (name: string) => {
   choiceList.push({
     date: '2021-10-02',
     name: name
@@ -26,7 +26,7 @@ function addItem(name: string) {
   <h1>ふーちょ！</h1>
   <p>今日のご飯なにする？アプリ</p>
   <!-- 選択肢部分 -->
-  <Choices :list="choiceList" v-on:add="addItem" />
+  <Choices :list="choiceList" @add="addItem" />
   <!-- ルーレット部分 -->
   <!-- ログ部分 -->
 </template>
